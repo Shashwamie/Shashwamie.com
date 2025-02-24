@@ -15,6 +15,10 @@ app.listen(PORT, () => {
 });
 
 
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
+
 // Example of post request not using the routing
 /*
 app.post("/favorite", async (req, res) => {
@@ -35,3 +39,5 @@ app.post("/favorite", async (req, res) => {
   }
 })
 */
+
+
