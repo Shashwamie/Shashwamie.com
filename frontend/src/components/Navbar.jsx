@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Flex, Text, HStack, Button } from '@chakra-ui/react'
+import { Container, Flex, HStack, Button, Image, Heading } from '@chakra-ui/react'
 import { useColorMode } from './ui/color-mode.jsx'
 import { Link } from 'react-router-dom'
 import { CiSquarePlus } from 'react-icons/ci'
@@ -15,12 +15,16 @@ const Navbar = () => {
 
   return (
     <Container maxW="full" p={4}>
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'} flexDir={{ base: 'column', sm: 'row' }} marginLeft={10} marginRight={10}>
-            <Link to="/">
-                <Text fontSize={'3xl'} fontWeight={'bold'} textAlign={'center'} color={"teal.400"} >
-                    Shashwamie Games
-                </Text>
-            </Link>
+        <Flex h={16} alignItems={'center'} justifyContent={'space-between'} flexDir={{ base: 'column', sm: 'row' }} 
+        marginLeft={10} marginRight={10} m={4}>
+            <Flex align={'center'} gap={4}>
+                <Image src='./src/assets/ShashwamieLogo.png' alt='Logo' h={"6rem"}/>
+                <Link to="/">
+                    <Heading fontSize={'4xl'} fontWeight={'bold'} textAlign={'center'} color={"teal.400"} >
+                        Shashwamie Games
+                    </Heading>
+                </Link>
+            </Flex>
             <HStack spacing={8} alignItems={'center'}>
                 <Link to="/createFavorite">
                     <Button _hover={{bg: dark }} shadow={"md"}>
