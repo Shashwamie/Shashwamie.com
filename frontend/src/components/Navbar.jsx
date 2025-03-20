@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { CiSquarePlus } from 'react-icons/ci'
 import { IoMoon } from 'react-icons/io5'
 import { LuSun } from 'react-icons/lu'
+import Logo from '../assets/ShashwamieLogo.png'
 
 const Navbar = () => {
 
@@ -18,7 +19,7 @@ const Navbar = () => {
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'} flexDir={{ base: 'column', sm: 'row' }} 
         marginLeft={10} marginRight={10} m={4}>
             <Flex align={'center'} gap={4}>
-                <Image src='./src/assets/ShashwamieLogo.png' alt='Logo' h={"6rem"}/>
+                <Image src={Logo} alt='Logo' h={"6rem"}/>
                 <Link to="/">
                     <Heading fontSize={'4xl'} fontWeight={'bold'} textAlign={'center'} color={"teal.400"} >
                         Shashwamie Games
