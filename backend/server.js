@@ -1,23 +1,33 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import { connectDB } from './config/db.js';
-
+import path from 'path';
+//import favoriteRoutes from './routes/favorite.route.js'
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const __dirname = path.resolve();
+
 dotenv.config();
 app.use(express.json()); // to accept JSON data in the body
 
+//app.use("/api/favorite", favoriteRoutes);
+
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static(path.join(__dirname, "/frontend/dist")));
+
+  app.get("*", (req,res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"))
+  })
+}
+
 app.listen(PORT, () => {
   connectDB()
-  console.log('Server is running on http://localhost:3000');
+  console.log('Server is running on http://localhost:' + PORT);
 });
 
 
-app.get("/", (req, res) => {
-  res.send("API is running...");
-});
 
 // Example of post request not using the routing
 /*

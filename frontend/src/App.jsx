@@ -8,6 +8,7 @@ import { useColorModeValue } from './components/ui/color-mode.jsx'
 import CreateAccount from './Pages/CreateAccount.jsx'
 import Login from './Pages/Login.jsx'
 import NodeEnroll from './Pages/NodeEnroll.jsx'
+import Landing from './Pages/Landing.jsx'
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
           <Route path='/Onboard' element={<Onboard />} />
           <Route path='/CreateAccount' element={<CreateAccount />}/>
           <Route path='/Login' element={<Login />} />
-          <Route path="/" element={<NodeEnroll />} />
+          <Route path="/" element={<HomePage />} />
         </Routes>
       </Box>
     </>
